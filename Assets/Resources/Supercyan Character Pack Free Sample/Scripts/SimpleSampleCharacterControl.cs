@@ -21,6 +21,20 @@ namespace Supercyan.FreeSample
         [SerializeField] private float m_turnSpeed = 200;
         [SerializeField] private float m_jumpForce = 4;
 
+
+        [SerializeField] private Transform m_cameraPivot; // assign your camera or head transform in Inspector
+
+        private float m_yaw = 0f;   // Y-axis rotation (character)
+        private float m_pitch = 0f; // X-axis rotation (camera/head)
+
+        [SerializeField] private float m_minPitch = -60f;
+        [SerializeField] private float m_maxPitch = 60f;
+
+
+
+        [SerializeField] private float m_mouseSensitivity = 2.0f;
+
+
         [SerializeField] private Animator m_animator = null;
         [SerializeField] private Rigidbody m_rigidBody = null;
 
@@ -41,6 +55,9 @@ namespace Supercyan.FreeSample
         private float m_minJumpInterval = 0.25f;
         private bool m_jumpInput = false;
 
+        private bool m_cursorVisible = false;
+
+
         private bool m_isGrounded;
 
         private List<Collider> m_collisions = new List<Collider>();
@@ -49,6 +66,13 @@ namespace Supercyan.FreeSample
         {
             if (!m_animator) { gameObject.GetComponent<Animator>(); }
             if (!m_rigidBody) { gameObject.GetComponent<Animator>(); }
+        }
+
+        private void Start()
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            m_cursorVisible = false;
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -108,6 +132,22 @@ namespace Supercyan.FreeSample
 
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                m_cursorVisible = !m_cursorVisible;
+
+                if (m_cursorVisible)
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                }
+                else
+                {
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
+                }
+            }
+
             if (!m_jumpInput && Input.GetKey(KeyCode.Space))
             {
                 m_jumpInput = true;
@@ -165,40 +205,63 @@ namespace Supercyan.FreeSample
             JumpingAndLanding();
         }
 
-        private void DirectUpdate()
+      private void DirectUpdate()
+    {
+        RotateWithMouse(); // Rotate character with mouse (yaw only)
+
+        float v = Input.GetAxis("Vertical");   // W/S
+        float h = Input.GetAxis("Horizontal"); // A/D
+
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            float v = Input.GetAxis("Vertical");
-            float h = Input.GetAxis("Horizontal");
-
-            Transform camera = Camera.main.transform;
-
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                v *= m_walkScale;
-                h *= m_walkScale;
-            }
-
-            m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
-            m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
-
-            Vector3 direction = camera.forward * m_currentV + camera.right * m_currentH;
-
-            float directionLength = direction.magnitude;
-            direction.y = 0;
-            direction = direction.normalized * directionLength;
-
-            if (direction != Vector3.zero)
-            {
-                m_currentDirection = Vector3.Slerp(m_currentDirection, direction, Time.deltaTime * m_interpolation);
-
-                transform.rotation = Quaternion.LookRotation(m_currentDirection);
-                transform.position += m_currentDirection * m_moveSpeed * Time.deltaTime;
-
-                m_animator.SetFloat("MoveSpeed", direction.magnitude);
-            }
-
-            JumpingAndLanding();
+            v *= m_walkScale;
+            h *= m_walkScale;
         }
+
+        m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
+        m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
+
+        // Camera-relative movement direction
+        Transform camera = Camera.main.transform;
+        Vector3 cameraForward = camera.forward;
+        Vector3 cameraRight = camera.right;
+
+        // Flatten Y components to avoid vertical drift
+        cameraForward.y = 0;
+        cameraRight.y = 0;
+        cameraForward.Normalize();
+        cameraRight.Normalize();
+
+        // Movement = camera-relative
+        Vector3 move = cameraForward * m_currentV + cameraRight * m_currentH;
+
+        transform.position += move * m_moveSpeed * Time.deltaTime;
+
+        // Animate if moving
+        m_animator.SetFloat("MoveSpeed", move.magnitude);
+
+        JumpingAndLanding();
+    }
+
+
+        private void RotateWithMouse()
+        {
+            float mouseX = Input.GetAxis("Mouse X") * m_mouseSensitivity;
+            float mouseY = Input.GetAxis("Mouse Y") * m_mouseSensitivity;
+
+            // Yaw: free rotation (no clamp) — rotate character left/right
+            m_yaw += mouseX;
+            transform.localRotation = Quaternion.Euler(0f, m_yaw, 0f);
+
+            // Pitch: clamp camera up/down
+            m_pitch -= mouseY;
+            m_pitch = Mathf.Clamp(m_pitch, m_minPitch, m_maxPitch);
+            m_cameraPivot.localRotation = Quaternion.Euler(m_pitch, 0f, 0f);
+        }
+
+
+
+
 
         private void JumpingAndLanding()
         {

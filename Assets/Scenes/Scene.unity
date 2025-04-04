@@ -772,15 +772,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3764581079822060442, guid: 9854bb05e98038145add8ed7c25af4b1, type: 3}
       propertyPath: m_moveSpeed
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3764581079822060442, guid: 9854bb05e98038145add8ed7c25af4b1, type: 3}
       propertyPath: m_turnSpeed
       value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 3764581079822060442, guid: 9854bb05e98038145add8ed7c25af4b1, type: 3}
+      propertyPath: m_cameraPivot
+      value: 
+      objectReference: {fileID: 675312076}
+    - target: {fileID: 3764581079822060442, guid: 9854bb05e98038145add8ed7c25af4b1, type: 3}
       propertyPath: m_controlMode
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764581079822060442, guid: 9854bb05e98038145add8ed7c25af4b1, type: 3}
+      propertyPath: m_mouseSensitivity
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6393281418917225084, guid: 9854bb05e98038145add8ed7c25af4b1, type: 3}
       propertyPath: m_Height
