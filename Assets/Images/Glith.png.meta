@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 105304936f427ca47981c9485d0466eb
+guid: ea95c3f387720ba4ca8a4041bd01b993
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2063687834043970181
-    second: Terminal_0
+      213: -8194966961674044804
+    second: Glith_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Terminal_0
+      name: Glith_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1000
-        height: 563
+        width: 1024
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b7d838c49de4c53e0800000000000000
-      internalID: -2063687834043970181
+      spriteID: c7a3b5797f0a54e80800000000000000
+      internalID: -8194966961674044804
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Terminal_0: -2063687834043970181
+      Glith_0: -8194966961674044804
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
