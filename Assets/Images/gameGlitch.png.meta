@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 111c26d3a33cc054a81ba6156cdc5483
+guid: 901817896028db148bde8d2431e439bb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1184061892584528553
-    second: Windows95-RTM-Desktop_0
+      213: -8325749905316951761
+    second: gameGlitch_0
+  - first:
+      213: 278581767904944089
+    second: gameGlitch_1
+  - first:
+      213: -6343814956709550337
+    second: gameGlitch_2
+  - first:
+      213: 5684259490731332625
+    second: gameGlitch_3
+  - first:
+      213: -3274784066196091466
+    second: gameGlitch_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +58,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Windows95-RTM-Desktop_0
+      name: gameGlitch_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1024
-        height: 768
+        x: 241
+        y: 568
+        width: 138
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +140,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7552c6c6bfd519fe0800000000000000
-      internalID: -1184061892584528553
+      spriteID: f2947d4a29ef47c80800000000000000
+      internalID: -8325749905316951761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gameGlitch_1
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 578
+        width: 522
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dfdfd454a8bdd300800000000000000
+      internalID: 278581767904944089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gameGlitch_2
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 431
+        width: 178
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff6648868ed36f7a0800000000000000
+      internalID: -6343814956709550337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gameGlitch_3
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 127
+        width: 472
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1141f2ce3eb82ee40800000000000000
+      internalID: 5684259490731332625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gameGlitch_4
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 70
+        width: 489
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bdc54a0e31ad82d0800000000000000
+      internalID: -3274784066196091466
       vertices: []
       indices: 
       edges: []
@@ -138,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Windows95-RTM-Desktop_0: -1184061892584528553
+      gameGlitch_0: -8325749905316951761
+      gameGlitch_1: 278581767904944089
+      gameGlitch_2: -6343814956709550337
+      gameGlitch_3: 5684259490731332625
+      gameGlitch_4: -3274784066196091466
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

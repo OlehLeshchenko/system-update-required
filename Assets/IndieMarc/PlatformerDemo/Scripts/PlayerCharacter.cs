@@ -1,7 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+using UnityEngine.WSA;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Platformer character movement
@@ -81,6 +85,8 @@ namespace IndieMarc.Platformer
         private float grounded_timer = 0f;
         private float jump_timer = 0f;
         private float hit_timer = 0f;
+
+        public GameObject folder;
 
         private static Dictionary<int, PlayerCharacter> character_list = new Dictionary<int, PlayerCharacter>();
 
@@ -402,8 +408,17 @@ namespace IndieMarc.Platformer
         {
             if (is_dead)
                 return;
-            
         }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+       
+            if (other.gameObject == folder)
+            {
+                SceneManager.LoadScene(1); // WIN
+            }
+        }
+
 
         public static PlayerCharacter GetNearest(Vector3 pos, float range = 99999f, bool alive_only=false)
         {

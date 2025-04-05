@@ -37,6 +37,11 @@ namespace IndieMarc.Platformer
 
         public UnityAction OnTriggerLever;
 
+
+
+        public GameObject folder;
+        private bool isFolderVisible = false;
+
         private static List<Lever> levers = new List<Lever>();
 
         private void Awake()
@@ -50,6 +55,9 @@ namespace IndieMarc.Platformer
             start_state = state;
             prev_state = state;
             ChangeSprite();
+
+            if (folder != null)
+                folder.SetActive(false);
         }
 
         void Update()
@@ -61,6 +69,11 @@ namespace IndieMarc.Platformer
             {
                 ChangeSprite();
                 prev_state = state;
+                if (folder != null && !isFolderVisible)
+                {
+                    folder.SetActive(true);
+                    isFolderVisible = true;
+                }
             }
         }
 

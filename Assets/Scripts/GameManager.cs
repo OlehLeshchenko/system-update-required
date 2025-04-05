@@ -5,14 +5,18 @@ public class GameManager : MonoBehaviour
 {
     public AudioSource musicSource;
     public AudioSource sfxSource;
-    public AudioClip background, startSound, errorSound, successSound, loadingSound;
+    public AudioClip background, startSound, errorSound, successSound, loadingSound, glitchSound, directorySound, clickSound;
     public GameObject errorImage;
-    public Image progressBar; // drag the UI Image with fillAmount here in the Inspector
     public GameObject updateMessage;
+    public GameObject glitchImage, labelImage, directoryImage; // drag in Inspector
+    public Image progressBar;
+
+    private bool hasKey = false;
+
     private void Start()
     {
-        // musicSource.clip = background;
-        // musicSource.Play();
+        musicSource.clip = background;
+        musicSource.Play();
         sfxSource.PlayOneShot(startSound);
         ErrorMessage();
     }
@@ -24,6 +28,7 @@ public class GameManager : MonoBehaviour
 
     public void handleErrorMessage()
     {
+        sfxSource.PlayOneShot(clickSound);
         errorImage.SetActive(false);
         StartProgressBar();
     }
@@ -57,7 +62,34 @@ public class GameManager : MonoBehaviour
 
         progressBar.fillAmount = 1f;
         updateMessage.SetActive(false);
-        sfxSource.PlayOneShot(successSound); 
+        sfxSource.PlayOneShot(successSound);
+        StartCoroutine(ShowGlitchEffect());
     }
 
+    private System.Collections.IEnumerator ShowGlitchEffect()
+    {
+        glitchImage.SetActive(true);
+        sfxSource.PlayOneShot(glitchSound);
+        yield return new WaitForSeconds(2f);
+        sfxSource.PlayOneShot(glitchSound);
+        yield return new WaitForSeconds(2f);
+        glitchImage.SetActive(false);
+        labelImage.SetActive(true);
+        directoryImage.SetActive(true);
+    }
+
+    public void handleDirectory() 
+    {
+        if (!hasKey)
+        {
+            sfxSource.PlayOneShot(directorySound);
+        }
+        else {
+
+        }
+    }
+    public void SetDirectoryKey(bool state)
+    {
+        hasKey = state;
+    }
 }
