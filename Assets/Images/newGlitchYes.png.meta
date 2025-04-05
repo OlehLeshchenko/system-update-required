@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fe337bd98242727408c0bdf8fa4225a3
+guid: 53140d07108670947bb6adc75cfe57a1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5887032592190466454
-    second: notrans_0
+      213: -3694601312982272077
+    second: newGlitchYes_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: notrans_0
+      name: newGlitchYes_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a6617595c0f0d4ea0800000000000000
-      internalID: -5887032592190466454
+      spriteID: 3b7fff04ea32abcc0800000000000000
+      internalID: -3694601312982272077
       vertices: []
       indices: 
       edges: []
