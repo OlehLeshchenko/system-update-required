@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      gameGlitch (2) (1)_0: 6962922484041763202
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
