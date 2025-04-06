@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c46560abef5714b4095a347f8d3ac375
+timeCreated: 1541610398
+licenseType: Store
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 137981
+  packageName: Simple 2D Template
+  packageVersion: 1.2
+  assetPath: Assets/IndieMarc/PlatformerDemo/PlatformerDemo.unity
+  uploadId: 322227

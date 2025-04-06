@@ -410,15 +410,14 @@ namespace IndieMarc.Platformer
                 return;
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
-        {
+        // private void OnTriggerEnter2D(Collider2D other)
+        // {
        
-            if (other.gameObject == folder)
-            {
-                SceneManager.LoadScene(1); // WIN
-            }
-        }
-
+        //     if (other.gameObject == folder)
+        //     {
+        //         SceneManager.LoadScene(1); // WIN
+        //     }
+        // }
 
         public static PlayerCharacter GetNearest(Vector3 pos, float range = 99999f, bool alive_only=false)
         {

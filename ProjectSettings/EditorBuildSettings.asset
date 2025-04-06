@@ -9,13 +9,28 @@ EditorBuildSettings:
     path: Assets/2D Casual Game Maze Template/Scenes/GameScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/2DFlow/StartDesktopScene.unity
+    path: Assets/Scenes/2DFlow/FirstDesktopScene.unity
     guid: e2d7a2d777499ef4a859203219fcaa0f
   - enabled: 1
-    path: Assets/Scenes/2DFlow/TopDownGameScene.unity
+    path: Assets/Scenes/2DFlow/SecondDesktopScene.unity
     guid: 427399befd51fba43b9a2fc97023680e
   - enabled: 1
     path: Assets/IndieMarc/PlatformerDemo/PlatformerDemo.unity
     guid: 230ee21eea18d46e48f6038641c438b7
+  - enabled: 1
+    path: Assets/Scenes/2DFlow/ThirdDesktopScene.unity
+    guid: c2d2ec86de2ab6644a3efcd245b4ddf9
+  - enabled: 1
+    path: Assets/Scenes/2DFlow/FourthDesktopScene.unity
+    guid: d57c09c47c539044bbd02f6b6189fd48
+  - enabled: 1
+    path: Assets/Scenes/2DFlow/FifthDesktopScene.unity
+    guid: ec0a65c4d9eebe34e8bdd1e2fab8f99f
+  - enabled: 1
+    path: Assets/Scenes/Opening 2 part.unity
+    guid: 812806ec3ff976b40b42b5281174743a
+  - enabled: 1
+    path: Assets/Scenes/SecondEtap.unity
+    guid: e9d4bf4a6ab482044bbeb1eedddc13ef
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

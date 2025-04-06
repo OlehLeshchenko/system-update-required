@@ -74,7 +74,7 @@ public class OutlookManager : MonoBehaviour
     public void openFile ()
     {
         sfxSource.PlayOneShot(clickSound);
-        SceneManager.LoadScene("2DFlow/TopDownGameScene");
+        SceneManager.LoadScene(2);
     }
 
 }

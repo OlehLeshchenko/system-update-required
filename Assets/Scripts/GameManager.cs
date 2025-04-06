@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public AudioClip background, startSound, errorSound, successSound, loadingSound, glitchSound, directorySound, clickSound;
     public GameObject errorImage;
     public GameObject updateMessage;
-    public GameObject glitchImage, labelImage, directoryImage; // drag in Inspector
+    public GameObject glitchImage, labelImage, directoryImage;
     public Image progressBar;
 
     private bool hasKey = false;
@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     {
         musicSource.clip = background;
         musicSource.Play();
-        sfxSource.PlayOneShot(startSound);
+        // sfxSource.PlayOneShot(startSound);
         ErrorMessage();
     }
 
