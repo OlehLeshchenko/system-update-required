@@ -44,5 +44,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NightEtap.unity
     guid: 370b65564c9943340a716e26feb5ceb4
+  - enabled: 1
+    path: Assets/Scenes/2DFlow/EndDesktopScene.unity
+    guid: e457674a9929d164fb2552ea477a2a1d
+  - enabled: 1
+    path: Assets/Scenes/EndEtap.unity
+    guid: 8a95b97332181544aae730bf93327415
+  - enabled: 1
+    path: Assets/Scenes/EndScrene.unity
+    guid: d8f4187a257fc004f9978b8962337474
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
