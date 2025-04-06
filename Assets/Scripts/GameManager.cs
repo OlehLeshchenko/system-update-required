@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         musicSource.clip = background;
         musicSource.Play();
         // sfxSource.PlayOneShot(startSound);
