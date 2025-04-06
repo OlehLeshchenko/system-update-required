@@ -2,10 +2,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadNextScene : MonoBehaviour
+public class LoadFirstEtap : MonoBehaviour
 {
     // Delay time in seconds
-    private float delay = 16.2f;
+    private float delay = 14.77f;
 
     void Start()
     {
@@ -16,6 +16,6 @@ public class LoadNextScene : MonoBehaviour
     IEnumerator LoadNextSceneAfterDelay()
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene(9);
+        SceneManager.LoadScene(10);
     }
 }
